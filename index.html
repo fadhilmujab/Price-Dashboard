@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BPHPP Dashboard | Live Tracker</title>
+  <meta name="description" content="Real-time Malaysian macroeconomic indicators dashboard synced with live Google Sheets data. Tracks inflation, rates, trade, and cost of living.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <!-- Chart.js CDN for interactive historical charts -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <!-- Decorative background elements for premium HSL glows -->
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+  <div class="bg-glow bg-glow-3"></div>
+
+  <div class="app-container">
+    <!-- Header Section -->
+    <header class="app-header">
+      <div class="header-left">
+        <div class="logo-area">
+          <span class="logo-icon">🏷️</span>
+          <h1>Price Dashboard</h1>
+        </div>
+        <p class="subtitle">Owned by BPHPP. It shows CPI, PPI, SPPI, and OPR live data synchronization</p>
+      </div>
+      <div class="header-right">
+        <div id="data-status-badge" class="status-badge status-live">
+          <span class="status-dot"></span>
+          <span id="data-status-text">Syncing Live Data...</span>
+        </div>
+        <button id="refresh-btn" class="icon-button" title="Refresh Live Data" aria-label="Refresh Data">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Dashboard Grid (3 Rows x 3 Columns) -->
+    <main class="dashboard-grid">
+      <!-- Row 1 -->
+      <div class="card" id="card-cpi_monthly" tabindex="0">
+        <div class="card-inner">
+          <div class="card-header">
+            <span class="card-code">CPI M</span>
+          </div>
+          <h3 class="card-name">CPI - Monthly</h3>
+          <div class="card-body">
+            <div class="card-value-container">
+              <span class="card-value" id="val-cpi_monthly">--</span>
+              <span class="card-trend" id="trend-cpi_monthly"></span>
+            </div>
+            <span class="card-change" id="change-cpi_monthly">--</span>
+          </div>
+          <div class="card-sparkline-container" id="spark-cpi_monthly"></div>
+        </div>
+      </div>
+
+      <div class="card" id="card-cpi_quarterly" tabindex="0">
+        <div class="card-inner">
+          <div class="card-header">
+            <span class="card-code">CPI Q</span>
+          </div>
+          <h3 class="card-name">CPI - Quarterly</h3>
+          <div class="card-body">
+            <div class="card-value-container">
+              <span class="card-value" id="val-cpi_quarterly">--</span>
+              <span class="card-trend" id="trend-cpi_quarterly"></span>
+            </div>
+            <span class="card-change" id="change-cpi_quarterly">--</span>
+          </div>
+          <div class="card-sparkline-container" id="spark-cpi_quarterly"></div>
+        </div>
+      </div>
+
+      <div class="card" id="card-cpi_annual" tabindex="0">
+        <div class="card-inner">
+          <div class="card-header">
+            <span class="card-code">CPI A</span>
+          </div>
+          <h3 class="card-name">CPI - Annual</h3>
+          <div class="card-body">
+            <div class="card-value-container">
+              <span class="card-value" id="val-cpi_annual">--</span>
+              <span class="card-trend" id="trend-cpi_annual"></span>
+            </div>
+            <span class="card-change" id="change-cpi_annual">--</span>
+          </div>
+          <div class="card-sparkline-container" id="spark-cpi_annual"></div>
+        </div>
+      </div>
+
+      <!-- Row 2 -->
+      <div class="card" id="card-ppi_monthly" tabindex="0">
+        <div class="card-inner">
+          <div class="card-header">
+            <span class="card-code">PPI M</span>
+          </div>
+          <h3 class="card-name">PPI - Monthly</h3>
+          <div class="card-body">
+            <div class="card-value-container">
+              <span class="card-value" id="val-ppi_monthly">--</span>
+              <span class="card-trend" id="trend-ppi_monthly"></span>
+            </div>
+            <span class="card-change" id="change-ppi_monthly">--</span>
+          </div>
+          <div class="card-sparkline-container" id="spark-ppi_monthly"></div>
+        </div>
+      </div>
+
+      <div class="card" id="card-ppi_quarterly" tabindex="0">
+        <div class="card-inner">
+          <div class="card-header">
+            <span class="card-code">PPI Q</span>
+          </div>
+          <h3 class="card-name">PPI - Quarterly</h3>
+          <div class="card-body">
+            <div class="card-value-container">
+              <span class="card-value" id="val-ppi_quarterly">--</span>
+              <span class="card-trend" id="trend-ppi_quarterly"></span>
+            </div>
+            <span class="card-change" id="change-ppi_quarterly">--</span>
+          </div>
+          <div class="card-sparkline-container" id="spark-ppi_quarterly"></div>
+        </div>
+      </div>
+
+      <div class="card" id="card-ppi_annual" tabindex="0">
+        <div class="card-inner">
+          <div class="card-header">
+            <span class="card-code">PPI A</span>
+          </div>
+          <h3 class="card-name">PPI - Annual</h3>
+          <div class="card-body">
+            <div class="card-value-container">
+              <span class="card-value" id="val-ppi_annual">--</span>
+              <span class="card-trend" id="trend-ppi_annual"></span>
+            </div>
+            <span class="card-change" id="change-ppi_annual">--</span>
+          </div>
+          <div class="card-sparkline-container" id="spark-ppi_annual"></div>
+        </div>
+      </div>
+
+      <!-- Row 3 -->
+      <div class="card" id="card-sppi_quarter" tabindex="0">
+        <div class="card-inner">
+          <div class="card-header">
+            <span class="card-code">SPPI Q</span>
+          </div>
+          <h3 class="card-name">SPPI - Quarterly</h3>
+          <div class="card-body">
+            <div class="card-value-container">
+              <span class="card-value" id="val-sppi_quarter">--</span>
+              <span class="card-trend" id="trend-sppi_quarter"></span>
+            </div>
+            <span class="card-change" id="change-sppi_quarter">--</span>
+          </div>
+          <div class="card-sparkline-container" id="spark-sppi_quarter"></div>
+        </div>
+      </div>
+
+      <div class="card" id="card-sppi_annual" tabindex="0">
+        <div class="card-inner">
+          <div class="card-header">
+            <span class="card-code">SPPI A</span>
+          </div>
+          <h3 class="card-name">SPPI - Annual</h3>
+          <div class="card-body">
+            <div class="card-value-container">
+              <span class="card-value" id="val-sppi_annual">--</span>
+              <span class="card-trend" id="trend-sppi_annual"></span>
+            </div>
+            <span class="card-change" id="change-sppi_annual">--</span>
+          </div>
+          <div class="card-sparkline-container" id="spark-sppi_annual"></div>
+        </div>
+      </div>
+
+      <div class="card" id="card-opr" tabindex="0">
+        <div class="card-inner">
+          <div class="card-header">
+            <span class="card-code">OPR</span>
+          </div>
+          <h3 class="card-name">Overnight Policy Rate</h3>
+          <div class="card-body">
+            <div class="card-value-container">
+              <span class="card-value" id="val-opr">--</span>
+              <span class="card-trend" id="trend-opr"></span>
+            </div>
+            <span class="card-change" id="change-opr">--</span>
+          </div>
+          <div class="card-sparkline-container" id="spark-opr"></div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer Area -->
+    <footer class="app-footer">
+      <p>Data Source Reference: Department of Statistics Malaysia (DOSM) & Bank Negara Malaysia (BNM).</p>
+      <p>Click on any card to view detailed historical charts and statistics.</p>
+    </footer>
+  </div>
+
+
+
+  <!-- Detail Modal (Interactive Historical Chart) -->
+  <div id="detail-modal" class="modal-overlay" aria-hidden="true">
+    <div class="modal-content detail-content glass-panel">
+      <button class="modal-close" id="close-detail" aria-label="Close modal">&times;</button>
+      
+      <div class="detail-header">
+        <div class="title-wrap">
+          <span id="detail-code" class="card-code">CODE</span>
+          <h2 id="detail-title">Indicator Title</h2>
+        </div>
+        <div class="detail-metric">
+          <div class="metric-big">
+            <span id="detail-value">--</span>
+            <span id="detail-trend-badge" class="trend-badge"></span>
+          </div>
+          <span id="detail-change" class="detail-change">--</span>
+        </div>
+      </div>
+
+      <div class="detail-body">
+        <div class="chart-container">
+          <canvas id="historical-chart"></canvas>
+        </div>
+        
+        <div class="info-section">
+          <h3>About this Indicator</h3>
+          <p id="detail-description">Description of the economic indicator will load here dynamically.</p>
+          
+          <div class="table-wrap">
+            <table id="historical-table">
+              <thead>
+                <tr>
+                  <th>Period</th>
+                  <th>Value</th>
+                </tr>
+              </thead>
+              <tbody id="historical-table-body">
+                <!-- Loaded dynamically -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main JavaScript File -->
+  <script src="app.js?v=2"></script>
+</body>
+</html>

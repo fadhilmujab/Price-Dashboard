@@ -1,0 +1,458 @@
+{
+  "cpi_monthly": {
+    "key": "cpi_monthly",
+    "name": "CPI - Monthly",
+    "shortName": "CPI M",
+    "currentValue": "2.2%",
+    "unit": "% y-o-y",
+    "trend": "up",
+    "change": "2.1%, 05-2026",
+    "description": "Consumer Price Index (CPI) on a monthly frequency. Measures the average monthly change in the prices of consumer goods and services.",
+    "history": [
+      {
+        "date": "2025-09",
+        "value": 1.8
+      },
+      {
+        "date": "2025-10",
+        "value": 1.7
+      },
+      {
+        "date": "2025-11",
+        "value": 1.9
+      },
+      {
+        "date": "2025-12",
+        "value": 1.8
+      },
+      {
+        "date": "2026-01",
+        "value": 2.0
+      },
+      {
+        "date": "2026-02",
+        "value": 1.9
+      },
+      {
+        "date": "2026-03",
+        "value": 2.1
+      },
+      {
+        "date": "2026-04",
+        "value": 2.0
+      },
+      {
+        "date": "2026-05",
+        "value": 2.1
+      },
+      {
+        "date": "2026-06",
+        "value": 2.2
+      }
+    ]
+  },
+  "cpi_quarterly": {
+    "key": "cpi_quarterly",
+    "name": "CPI - Quarterly",
+    "shortName": "CPI Q",
+    "currentValue": "2.1%",
+    "unit": "% y-o-y",
+    "trend": "up",
+    "change": "1.9%, Q1 2026",
+    "description": "Consumer Price Index (CPI) aggregated on a quarterly basis, reflecting structural medium-term price trends in consumer baskets.",
+    "history": [
+      {
+        "date": "2024-Q1",
+        "value": 1.6
+      },
+      {
+        "date": "2024-Q2",
+        "value": 1.8
+      },
+      {
+        "date": "2024-Q3",
+        "value": 1.9
+      },
+      {
+        "date": "2024-Q4",
+        "value": 1.7
+      },
+      {
+        "date": "2025-Q1",
+        "value": 1.8
+      },
+      {
+        "date": "2025-Q2",
+        "value": 2.0
+      },
+      {
+        "date": "2025-Q3",
+        "value": 2.1
+      },
+      {
+        "date": "2025-Q4",
+        "value": 1.9
+      },
+      {
+        "date": "2026-Q1",
+        "value": 1.9
+      },
+      {
+        "date": "2026-Q2",
+        "value": 2.1
+      }
+    ]
+  },
+  "cpi_annual": {
+    "key": "cpi_annual",
+    "name": "CPI - Annual",
+    "shortName": "CPI A",
+    "currentValue": "2.5%",
+    "unit": "% y-o-y",
+    "trend": "down",
+    "change": "3.3%, 2024",
+    "description": "Consumer Price Index (CPI) on an annual basis, illustrating year-on-year consumer price trends and long-term purchasing power.",
+    "history": [
+      {
+        "date": "2017",
+        "value": 3.7
+      },
+      {
+        "date": "2018",
+        "value": 1.0
+      },
+      {
+        "date": "2019",
+        "value": 0.7
+      },
+      {
+        "date": "2020",
+        "value": -1.2
+      },
+      {
+        "date": "2021",
+        "value": 2.5
+      },
+      {
+        "date": "2022",
+        "value": 3.3
+      },
+      {
+        "date": "2023",
+        "value": 2.5
+      },
+      {
+        "date": "2024",
+        "value": 3.3
+      },
+      {
+        "date": "2025",
+        "value": 2.5
+      }
+    ]
+  },
+  "ppi_monthly": {
+    "key": "ppi_monthly",
+    "name": "PPI - Monthly",
+    "shortName": "PPI M",
+    "currentValue": "1.8%",
+    "unit": "% y-o-y",
+    "trend": "down",
+    "change": "1.9%, 05-2026",
+    "description": "Producer Price Index (PPI) on a monthly frequency. Tracks average monthly shifts in prices received by domestic producers for their output.",
+    "history": [
+      {
+        "date": "2025-09",
+        "value": 1.2
+      },
+      {
+        "date": "2025-10",
+        "value": 1.5
+      },
+      {
+        "date": "2025-11",
+        "value": 1.6
+      },
+      {
+        "date": "2025-12",
+        "value": 1.4
+      },
+      {
+        "date": "2026-01",
+        "value": 1.7
+      },
+      {
+        "date": "2026-02",
+        "value": 1.8
+      },
+      {
+        "date": "2026-03",
+        "value": 2.0
+      },
+      {
+        "date": "2026-04",
+        "value": 2.1
+      },
+      {
+        "date": "2026-05",
+        "value": 1.9
+      },
+      {
+        "date": "2026-06",
+        "value": 1.8
+      }
+    ]
+  },
+  "ppi_quarterly": {
+    "key": "ppi_quarterly",
+    "name": "PPI - Quarterly",
+    "shortName": "PPI Q",
+    "currentValue": "1.9%",
+    "unit": "% y-o-y",
+    "trend": "up",
+    "change": "1.7%, Q1 2026",
+    "description": "Producer Price Index (PPI) compiled quarterly, showing medium-term supply-side wholesale cost adjustments.",
+    "history": [
+      {
+        "date": "2024-Q1",
+        "value": 0.8
+      },
+      {
+        "date": "2024-Q2",
+        "value": 1.2
+      },
+      {
+        "date": "2024-Q3",
+        "value": 1.4
+      },
+      {
+        "date": "2024-Q4",
+        "value": 1.1
+      },
+      {
+        "date": "2025-Q1",
+        "value": 1.3
+      },
+      {
+        "date": "2025-Q2",
+        "value": 1.6
+      },
+      {
+        "date": "2025-Q3",
+        "value": 1.7
+      },
+      {
+        "date": "2025-Q4",
+        "value": 1.5
+      },
+      {
+        "date": "2026-Q1",
+        "value": 1.7
+      },
+      {
+        "date": "2026-Q2",
+        "value": 1.9
+      }
+    ]
+  },
+  "ppi_annual": {
+    "key": "ppi_annual",
+    "name": "PPI - Annual",
+    "shortName": "PPI A",
+    "currentValue": "1.6%",
+    "unit": "% y-o-y",
+    "trend": "up",
+    "change": "1.3%, 2024",
+    "description": "Producer Price Index (PPI) annual average change, illustrating baseline producer price levels and wholesale cost pressures.",
+    "history": [
+      {
+        "date": "2017",
+        "value": 6.7
+      },
+      {
+        "date": "2018",
+        "value": -1.1
+      },
+      {
+        "date": "2019",
+        "value": -1.4
+      },
+      {
+        "date": "2020",
+        "value": -2.7
+      },
+      {
+        "date": "2021",
+        "value": 9.5
+      },
+      {
+        "date": "2022",
+        "value": 7.8
+      },
+      {
+        "date": "2023",
+        "value": -1.9
+      },
+      {
+        "date": "2024",
+        "value": 1.3
+      },
+      {
+        "date": "2025",
+        "value": 1.6
+      }
+    ]
+  },
+  "sppi_quarter": {
+    "key": "sppi_quarter",
+    "name": "SPPI - Quarterly",
+    "shortName": "SPPI Q",
+    "currentValue": "108.9",
+    "unit": "points",
+    "trend": "up",
+    "change": "108.4, Q1 2026",
+    "description": "Services Producer Price Index (SPPI) on a quarterly basis. Captures average price movements in business services, including transport, finance, and telecommunications.",
+    "history": [
+      {
+        "date": "2024-Q1",
+        "value": 106.2
+      },
+      {
+        "date": "2024-Q2",
+        "value": 106.8
+      },
+      {
+        "date": "2024-Q3",
+        "value": 107.1
+      },
+      {
+        "date": "2024-Q4",
+        "value": 107.3
+      },
+      {
+        "date": "2025-Q1",
+        "value": 107.6
+      },
+      {
+        "date": "2025-Q2",
+        "value": 107.9
+      },
+      {
+        "date": "2025-Q3",
+        "value": 108.2
+      },
+      {
+        "date": "2025-Q4",
+        "value": 108.3
+      },
+      {
+        "date": "2026-Q1",
+        "value": 108.4
+      },
+      {
+        "date": "2026-Q2",
+        "value": 108.9
+      }
+    ]
+  },
+  "sppi_annual": {
+    "key": "sppi_annual",
+    "name": "SPPI - Annual",
+    "shortName": "SPPI A",
+    "currentValue": "108.3",
+    "unit": "points",
+    "trend": "up",
+    "change": "106.8, 2024",
+    "description": "Services Producer Price Index (SPPI) average annual change, highlighting long-term service sector cost and price trends.",
+    "history": [
+      {
+        "date": "2017",
+        "value": 101.2
+      },
+      {
+        "date": "2018",
+        "value": 102.1
+      },
+      {
+        "date": "2019",
+        "value": 103.0
+      },
+      {
+        "date": "2020",
+        "value": 103.5
+      },
+      {
+        "date": "2021",
+        "value": 104.2
+      },
+      {
+        "date": "2022",
+        "value": 105.8
+      },
+      {
+        "date": "2023",
+        "value": 106.4
+      },
+      {
+        "date": "2024",
+        "value": 106.8
+      },
+      {
+        "date": "2025",
+        "value": 108.3
+      }
+    ]
+  },
+  "opr": {
+    "key": "opr",
+    "name": "Overnight Policy Rate (OPR)",
+    "shortName": "OPR",
+    "currentValue": "3.00%",
+    "unit": "%",
+    "trend": "stable",
+    "change": "3.00%, 05-2026",
+    "description": "The Overnight Policy Rate (OPR) is BNM's benchmark interest rate, dictating retail interest rates across the banking system.",
+    "history": [
+      {
+        "date": "2025-09",
+        "value": 3.0
+      },
+      {
+        "date": "2025-10",
+        "value": 3.0
+      },
+      {
+        "date": "2025-11",
+        "value": 3.0
+      },
+      {
+        "date": "2025-12",
+        "value": 3.0
+      },
+      {
+        "date": "2026-01",
+        "value": 3.0
+      },
+      {
+        "date": "2026-02",
+        "value": 3.0
+      },
+      {
+        "date": "2026-03",
+        "value": 3.0
+      },
+      {
+        "date": "2026-04",
+        "value": 3.0
+      },
+      {
+        "date": "2026-05",
+        "value": 3.0
+      },
+      {
+        "date": "2026-06",
+        "value": 3.0
+      }
+    ]
+  }
+}
